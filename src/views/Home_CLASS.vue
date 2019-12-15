@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="mainContainer">
+      <!-- <LoginTmpl name="QuickPOS" /> -->
       <OutletScreenTmpl :userName="userName" :customerName="customerName" :outlets="outlets" />
     </div>
   </div>
@@ -13,13 +14,15 @@ import OutletScreenTmpl from "@/components/OutletScreen";
 export default {
   name: "home",
   components: {
-    OutletScreenTmpl
+    LoginTmpl,
+    OutletScreenTmpl,
   },
-  setup() {
-    const userName = "pind";
-    const customerName = "Pind";
-    const outlets = [{ name: "Pind", outletID: "BANGALORE" }];
-    return { userName, customerName, outlets };
+  data: () => {
+    return {
+      userName: "pind",
+      customerName: "Pind",
+      outlets: [{ name: "Pind", outletID: "BANGALORE" }]
+    };
   }
 };
 </script>
